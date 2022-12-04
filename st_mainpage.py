@@ -198,6 +198,26 @@ def main_app(DS):
             delta=f"{RMSE(df.observed, df.model2) - RMSE(df.observed, df.model1):.1f} W/m2",
             delta_color="inverse"
             )
+    
+    
+    # Conclusion
+    st.markdown("""---""")
+    st.subheader('Conclusion')
+    st.markdown('''The task was to detremine which forecasting model performes better. 
+            This app may serve for quick demonstration and data overview, 
+            however is limited in size. You are free to change parameters and 
+            see the results. According to the 2D/1D indicators, Model 1 seems 
+            to be the winner. Whole dataset, multidimensional analysis is not
+            included, but it favours Model 1 as well. 
+            The indicators were calculated as follows:
+            ''')
+            
+    st.latex(r'MAE = \frac{1}{n}\sum_{i=1}^{n}|x_{i} - \hat{x}_{i}|')
+    st.latex(r'RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_{i} - \hat{x}_{i})^{2}}')
+    
+    st.markdown('''The source code could be found here: 
+                [GitHub](https://github.com/tereza-abl/GHI_model).
+            ''')
 
 
 if __name__ == "__main__":
